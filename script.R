@@ -13,7 +13,7 @@ h2o.clusterInfo()
 
 sonar.hex = h2o.importFile("sonar.csv")
 sonar.split = h2o.splitFrame(data = sonar.hex,
-                             ratios = 0.8,
+                             ratios = 0.6,
                              seed = 0)
 sonar.train = sonar.split[[1]]
 sonar.test = sonar.split[[2]]
@@ -36,17 +36,7 @@ h2o.experiment = function(h2o.learner, parameters) {
   print(p)
 }
 
+h2o.experiment(h2o.gbm)
 h2o.experiment(h2o.glm, list(family = "binomial"))
-# h2o.experiment(h2o.randomForest)
-
-
-#
-#
-# h2o.glm(1:60, 61, training_frame=sonar.train, family="binomial")
-#
-#
-# sonar.dl = h2o.deeplearning(1:60, 61, training_frame=sonar.train, family="binomial")
-# sonar.dl.predictions = h2o.predict(sonar.dl, sonar.test)
-# predictions.dl = as.data.frame(sonar.dl.predictions)
-# sonar.test.rf = as.data.frame(sonar.test)
-# confusionMatrix(predictions$predict, sonar.test.df$C61)
+h2o.experiment(h2o.randomForest)
+h2o.experiment(h2o.deeplearning)
