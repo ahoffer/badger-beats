@@ -3,7 +3,8 @@
 # install.packages("ROCR")
 
 # MAKE RESULTS REPEATABLE
-set.seed(0)
+seed=0
+set.seed(seed)
 
 # LIBRARIES
 library(tools)
@@ -24,7 +25,7 @@ h2o.clusterInfo()
 sonar.hex = h2o.importFile("sonar.csv")
 sonar.split = h2o.splitFrame(data = sonar.hex,
                              ratios = 0.8,
-                             seed = 0)
+                             seed = seed)
 sonar.train = sonar.split[[1]]
 sonar.test = sonar.split[[2]]
 sonar.train.df = as.data.frame(sonar.train)
@@ -35,3 +36,6 @@ h2o.experiment(h2o.gbm)
 h2o.experiment(h2o.glm, list(family = "binomial"))
 h2o.experiment(h2o.randomForest)
 h2o.experiment(h2o.deeplearning)
+
+p=h2o.experiment(h2o.gbm)
+rv=plot(p, type="roc", col="blue",  typ="b",)

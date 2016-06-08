@@ -13,11 +13,7 @@ Experimenting with H2O's integration with R and its efficacy on the UCI Sonar Da
 <p>
 
 ```
-H2OBinomialMetrics: gbm
-
 MSE:  0.1181879
-R^2:  0.5173993
-LogLoss:  0.4113014
 Mean Per-Class Error:  0.1083333
 AUC:  0.9066667
 Gini:  0.8133333
@@ -33,17 +29,10 @@ Gini:  0.8133333
 **These numbers are _sick_**
 
 ```
-H2OBinomialMetrics: glm
-
 MSE:  0.1192669
-R^2:  0.5129935
-LogLoss:  0.3861887
 Mean Per-Class Error:  0.08333333
 AUC:  0.9433333
 Gini:  0.8866667
-Null Deviance:  48.09445
-Residual Deviance:  27.03321
-AIC:  95.03321
 ```
 
 ## Random Forest
@@ -53,11 +42,7 @@ AIC:  95.03321
 <p>
 
 ```
-H2OBinomialMetrics: drf
-
 MSE:  0.1082971
-R^2:  0.5577867
-LogLoss:  0.3574005
 Mean Per-Class Error:  0.08333333
 AUC:  0.9416667
 Gini:  0.8833333
@@ -68,18 +53,15 @@ Gini:  0.8833333
 ![](ROC-DeepLearning.png)
 
 ```
-H2OBinomialMetrics: deeplearning
-
 MSE:  0.09352543
-R^2:  0.6181045
-LogLoss:  0.4602012
 Mean Per-Class Error:  0.125
 AUC:  0.9433333
 Gini:  0.8866667
 ```
 
 ## Who Won?
-_Everybody_ is a winner. The performance on this data set is phenomenal. 
+_Everybody is a winner_. 
+The performance on this data set is phenomenal.
 
 * Deep learning wins MSE (0.094)
 * Random Forest and Generalized Linear Modeling tie for best per-class error (0.083)
@@ -102,6 +84,7 @@ using information from the raw sonar signal that is not preserved in the
 processed data sets presented here.
 ```
 
-Both GLM and Random Forest achieve amazing accuracies
- * min_per_class_accuracy 0.90
- * mean_per_class_accuracy 0.92
+Both GLM and Random Forest achieve amazing accuracies (tied)
+
+ * **min_per_class_accuracy 0.90**
+ * **mean_per_class_accuracy 0.92**
