@@ -72,7 +72,7 @@ From the documentation that accompanies the data set, the original researchers t
 
 ```
 % Right on test set
-84.% / 89.2%
+84% / 89%
 ```
 
 Human experts did better
