@@ -1,8 +1,22 @@
-#H2O and the Sonar Data Set
+# H2O and the Sonar Data Set
 
-Experimenting with H2O's integration with R and its efficacy on the UCI Sonar Data Set.
+This project was a chance to experiment with:
 
- * Training/test split is 80/20.
+- The machine learning package H2O.
+- The R interface to H2O. 
+- Plotting the sonar data set to show how visually inseparable mines and rocks are.
+- Plotting the principle components of the sonar data. Again, this demonstrates how similar rocks and mines are.
+- NOTE: H2O is is a Java application that runs externally and offers its services over and HTTP interface. It must be installed independently, although it can be started from R.
+
+### Summary
+- H2O is amazingly fast and effective. In a few seconds, I trained a model that performed almost as well as expert humans.
+- Generalized linear modeling performed as well as ensemble methods with GMB and radom forest.
+- Deep learning was great, but did not provide significant benefits over the other techniques.
+- The plotting the principle components did not provide visual insights into this data set. 
+- As expected, training a learner with the principle components did not improve the metrics.
+
+### Other
+- The training/test split used is 80/20.
 
 ---
 
